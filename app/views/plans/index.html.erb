@@ -1,2 +1,29 @@
-<h1>Plans#index</h1>
-<p>Find me in app/views/plans/index.html.erb</p>
+<h1>スケジュール管理アプリ</h1>
+
+    <h2>予定一覧</h2>
+    <p>予定新規追加</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>開始日</th>
+                <th>終了日</th>
+                <th>終日</th>
+                <th>更新日時</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @plans.each do |plan| %>
+                <tr>
+                    <td><%= plan.id %></td>
+                    <td><%= plan.title %></td>
+                    <td><%= plan.start %></td>
+                    <td><%= plan.end %></td>
+                    <td><%= plan.all_day %></td>
+                    <td><%= plan.update_at %></td>
+                </tr>
+            <% end %>
+        </thead>
+    </table>
