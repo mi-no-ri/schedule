@@ -1,3 +1,5 @@
+<h1>スケジュール管理アプリ</h1>
+
 <%= form_with model: @plan do |form| %>
     <%# エラーメッセージ表示 %>
     <% if @plan.errors.any? %>
@@ -10,26 +12,35 @@
         </ul>
     <% end %>
 
-    <div>
-        <%= form.label :name, "タイトル" %>
-        <%= form.text_field :name %>
+    <table>
+        <tr>
+            <th><%= form.label :name, "タイトル" %></th>
+            <td><%= form.text_field :name %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :start, "開始日" %></th>
+            <td><%= form.date_field :start %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :end, "終了日" %></th>
+            <td><%= form.date_field :end %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :all_day, "終日" %></th>
+            <td><%= form.check_box :all_day %>終日の場合はチェックを入れます</td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :memo, "メモ" %></th>
+            <td><%= form.text_area :memo %></td>
+        </tr>
+    </table>
+
+    <div id="submit_button">
+        <%= form.submit "登録", class:"button" %>
     </div>
 
-    <div>
-        <%= form.label :start, "開始日" %>
-        <%= form.date_field :start %>
-    </div>
-
-    <div>
-        <%= form.label :end, "終了日" %>
-        <%= form.date_field :end %>
-    </div>
-
-    <div>
-        <%= form.label :all_day, "終日" %>
-        <%= form.check_box :all_day %>
-    </div>
-
-    <%= form.submit "登録" %>
-    
 <% end %>

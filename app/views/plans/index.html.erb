@@ -1,8 +1,8 @@
 <h1>スケジュール管理アプリ</h1>
-<div id="wrap">    
-    <div id="top">
+<div class="wrap">    
+    <div class="box" id="top">
         <h2>予定一覧</h2>
-        <%= link_to "新規追加", :new_plan, id: "new-plan-button" %>
+        <%= link_to "新規追加", :new_plan, class: "button" %>
     </div>
     <table>
         <thead>
@@ -29,7 +29,8 @@
                         <% end %>
                     </td>
                     <td><%= plan.updated_at %></td>
-                </tr>
+                    <td><%= link_to "詳細", plan %></td>
+                    </tr>
             <% end %>
         </thead>
     </table>

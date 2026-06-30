@@ -22,6 +22,7 @@ class PlansController < ApplicationController
 
   # 予定詳細画面
   def show
+    @plan = Plan.find(params[:id])
   end
 
   # 予定編集画面
@@ -40,7 +41,7 @@ class PlansController < ApplicationController
 
   # 許可するキーだけを受け取る
   def plan_params
-    params.require(:plan).permit(:name, :start, :end, :all_day)
+    params.require(:plan).permit(:name, :start, :end, :all_day, :memo)
   end
   
 end

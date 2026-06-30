@@ -1,0 +1,36 @@
+<h1>スケジュール管理アプリ</h1>
+<div class="wrap">
+
+    <table>
+        <tr>
+            <th>タイトル</th>
+            <td><%= @plan.name %></td>
+        </tr>
+
+        <tr>
+            <th>開始日</th>
+            <td><%= @plan.start %></td>
+        </tr>
+
+        <tr>
+            <th>終了日</th>
+            <td><%= @plan.end %></td>
+        </tr>
+
+        <tr>
+            <th>終日</th>
+            <td><% if @plan.all_day %>〇<% end %></td>
+        </tr>
+
+        <tr>
+            <th>メモ</th>
+            <td><%= @plan.memo %></td>
+        </tr>
+    </table>
+
+    <div class="box" id="edit_box">
+        <%= link_to "一覧に戻る", :plans, class:"back_index button" %>
+        <%= link_to "編集", :edit_plan, class:"button" %>
+    </div>
+
+</div>
