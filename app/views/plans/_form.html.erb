@@ -1,0 +1,50 @@
+<div class="wrap">   
+
+<%= form_with model: @plan do |form| %>
+    <%# エラーメッセージ表示 %>
+    <% if @plan.errors.any? %>
+        <ul>
+            <% @plan.errors.full_messages.each do |msg| %>
+                <li>
+                    <%= msg %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+ 
+    <table>
+        <tr>
+            <th><%= form.label :name, "タイトル" %></th>
+            <td><%= form.text_field :name %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :start, "開始日" %></th>
+            <td><%= form.date_field :start %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :end, "終了日" %></th>
+            <td><%= form.date_field :end %></td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :all_day, "終日" %></th>
+            <td><%= form.check_box :all_day %>終日の場合はチェックを入れます</td>
+        </tr>
+
+        <tr>
+            <th><%= form.label :memo, "メモ" %></th>
+            <td><%= form.text_area :memo %></td>
+        </tr>
+    </table>
+
+    <div class="box under_box">
+        <%= link_to "キャンセル", :plans, class:"back_index button" %>
+        <%= form.submit "登録", class:"button" %>
+    </div>
+
+<% end %>
+
+</div>

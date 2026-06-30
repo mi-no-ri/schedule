@@ -30,7 +30,8 @@
                     </td>
                     <td><%= plan.updated_at %></td>
                     <td><%= link_to "詳細", plan %></td>
-                    </tr>
+                    <td><%= link_to "編集", edit_plan_path(plan) %></td>
+                </tr>
             <% end %>
         </thead>
     </table>

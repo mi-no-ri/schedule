@@ -27,10 +27,18 @@ class PlansController < ApplicationController
 
   # 予定編集画面
   def edit
+    @plan = Plan.find(params[:id])
   end
 
   # 予定更新処理
   def update
+    @plan = Plan.find(params[:id])
+
+    if @plan.update(plan_params)
+      redirect_to @plan, notice:"更新しました"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   # 予定削除処理
