@@ -29,6 +29,7 @@ h2 {
 }
 
 #new-plan-button {
+  text-decoration: none;
   font-size: 15px;
   background-color: #145d7a;
   color: #ffffff;
@@ -38,6 +39,7 @@ h2 {
 
 table {
   margin: auto;
+}
 
 th {
   background-color: #b7e4f6;

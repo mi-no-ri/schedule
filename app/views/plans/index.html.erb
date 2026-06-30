@@ -2,7 +2,7 @@
 <div id="wrap">    
     <div id="top">
         <h2>予定一覧</h2>
-        <p id="new-plan-button">新規追加</p>
+        <%= link_to "新規追加", :new_plan, id: "new-plan-button" %>
     </div>
     <table>
         <thead>
@@ -20,11 +20,15 @@
             <% @plans.each do |plan| %>
                 <tr>
                     <td><%= plan.id %></td>
-                    <td><%= plan.title %></td>
+                    <td><%= plan.name %></td>
                     <td><%= plan.start %></td>
                     <td><%= plan.end %></td>
-                    <td><%= plan.all_day %></td>
-                    <td><%= plan.update_at %></td>
+                    <td>
+                        <% if plan.all_day %>
+                        〇
+                        <% end %>
+                    </td>
+                    <td><%= plan.updated_at %></td>
                 </tr>
             <% end %>
         </thead>

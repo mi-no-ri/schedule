@@ -1,0 +1,35 @@
+<%= form_with model: @plan do |form| %>
+    <%# エラーメッセージ表示 %>
+    <% if @plan.errors.any? %>
+        <ul>
+            <% @plan.errors.full_messages.each do |msg| %>
+                <li>
+                    <%= msg %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+
+    <div>
+        <%= form.label :name, "タイトル" %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <%= form.label :start, "開始日" %>
+        <%= form.date_field :start %>
+    </div>
+
+    <div>
+        <%= form.label :end, "終了日" %>
+        <%= form.date_field :end %>
+    </div>
+
+    <div>
+        <%= form.label :all_day, "終日" %>
+        <%= form.check_box :all_day %>
+    </div>
+
+    <%= form.submit "登録" %>
+    
+<% end %>
