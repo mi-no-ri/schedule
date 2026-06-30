@@ -43,6 +43,10 @@ class PlansController < ApplicationController
 
   # 予定削除処理
   def destroy
+    @plan = Plan.find(params[:id])
+    @plan.destroy
+
+    redirect_to plans_path, notice: "削除しました", status: :see_other
   end
 
   private

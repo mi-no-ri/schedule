@@ -31,6 +31,7 @@
                     <td><%= plan.updated_at %></td>
                     <td><%= link_to "詳細", plan %></td>
                     <td><%= link_to "編集", edit_plan_path(plan) %></td>
+                    <td><%= link_to "削除", plan, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %></td>
                 </tr>
             <% end %>
         </thead>
