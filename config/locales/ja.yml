@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    attributes:
+      plan:
+        name: "タイトル"
+        start_day: "開始日"
+        end_day: "終了日"
+        all_day: "終日"
+        memo: "メモ"
+
+  errors:
+    format: "%{attribute} %{message}"
+
+    messages:
+      invalid: "が正しくありません"
+      blank: "を入力してください"
+      too_long: "は%{count}文字以下で入力してください"

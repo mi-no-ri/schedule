@@ -53,7 +53,7 @@ class PlansController < ApplicationController
 
   # 許可するキーだけを受け取る
   def plan_params
-    params.require(:plan).permit(:name, :start, :end, :all_day, :memo)
+    params.require(:plan).permit(:name, :start_day, :end_day, :all_day, :memo)
   end
   
 end

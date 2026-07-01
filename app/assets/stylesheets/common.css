@@ -38,6 +38,7 @@ h2 {
   color: #ffffff;
   padding: 15px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 table {
