@@ -36,4 +36,8 @@
             <% end %>
         </thead>
     </table>
+    <div class="box" id="bottom">
+        <p><%= Date.current.strftime("%Y/%m/%d") %></p>
+        <p>予定合計：<%= @plans_count %>件</p>
+    </div>
 </div>

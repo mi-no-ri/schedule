@@ -72,3 +72,10 @@ td {
   border: 2px solid #145d7a;
   font-size: 13px;
 }
+
+#bottom {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+  margin-top: 50px;
+}

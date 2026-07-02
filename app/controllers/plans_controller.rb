@@ -2,6 +2,7 @@ class PlansController < ApplicationController
   # 予定一覧画面
   def index
     @plans = Plan.all
+    @plans_count = Plan.count
   end
 
   # 予定新規追加画面
