@@ -1,0 +1,43 @@
+<h1>スケジュール管理アプリ</h1>
+<div class="wrap">    
+    <div class="box" id="top">
+        <h2>予定一覧</h2>
+        <%= link_to "新規追加", :new_plan, class: "button" %>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>開始日</th>
+                <th>終了日</th>
+                <th>終日</th>
+                <th>更新日時</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @plans.each do |plan| %>
+                <tr>
+                    <td><%= plan.id %></td>
+                    <td><%= plan.name %></td>
+                    <td><%= plan.start_day_formatted %></td>
+                    <td><%= plan.end_day_formatted %></td>
+                    <td>
+                        <% if plan.all_day %>
+                        〇
+                        <% end %>
+                    </td>
+                    <td><%= plan.updated_at_formatted %></td>
+                    <td><%= link_to "詳細", plan %></td>
+                    <td><%= link_to "編集", edit_plan_path(plan) %></td>
+                    <td><%= link_to "削除", plan, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %></td>
+                </tr>
+            <% end %>
+        </thead>
+    </table>
+    <div class="box" id="bottom">
+        <p><%= Date.current.strftime("%Y/%m/%d") %></p>
+        <p>予定合計：<%= @plans_count %>件</p>
+    </div>
+</div>
